@@ -4,21 +4,21 @@
 }
 
 .form-group input{
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .form-group input::placeholder{
     color: #c0bdbd;
     font-weight: 300;
-
 }
 
 thead th{
     font-weight: 400;
 }
 
-table tbody:tr:hover{
-    background-color: #fffbf2;
+table tbody tr:hover{
+    background-color: #226BE8;
+    color: white;
     cursor: pointer;
 }
 
