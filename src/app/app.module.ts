@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { PayementDetailsComponent } from './payement-details/payement-details.component';
 import { PayementDetailsFormComponent } from './payement-details/payement-details-form/payement-details-form.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
