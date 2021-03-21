@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="jumbotron py-3">
   <h2 class="display-4 m-4 text-center">C.R.U.D - Payement Details</h2>
 </div>
 
@@ -9,6 +9,24 @@
     <app-payement-details-form></app-payement-details-form>
   </div>
   <div class="col-md-6">
-    <span>List of payement details</span>
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th>Card Owner</th>
+          <th>Card Number</th>
+          <th>Exp. Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pd of service.list">
+          <td>{{pd.cardOwnerName}}</td>
+          <td>{{pd.cardNumber}}</td>
+          <td>{{pd.expirationDate}}</td>
+          <td><i class="fas fa-minus-circle fa-lg text-danger"></i></td>
+        </tr>
+      </tbody>
+    </table>
+
   </div>
 </div>

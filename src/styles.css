@@ -25,3 +25,7 @@ table tbody:tr:hover{
 input.invalid{
     border-color: red;
 }
+
+i,btn{
+    cursor: pointer;
+}
