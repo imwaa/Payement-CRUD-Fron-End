@@ -1,30 +1,37 @@
-<form>
+<form novalidate #form="ngForm">
   <input type="hidden" name="payementDetailId" [value]="service.formData.payementDetailId" />
 
   <div class="form-group">
     <label>Card Name</label>
     <input class="form-control form-control-lg" placeholder="Full Name" name="cardOwnerName" #cardOwnerName="ngModel"
-      [(ngModel)]="service.formData.cardOwnerName">
+      [(ngModel)]="service.formData.cardOwnerName" required
+      [class.invalid]="cardOwnerName.invalid && cardOwnerName.touched">
   </div>
 
   <div class="form-group">
     <label>Card Number</label>
     <input class="form-control form-control-lg" placeholder="Card Number" name=" cardNumber" #cardNumber="ngModel"
-      [(ngModel)]="service.formData.cardNumber">
+      [(ngModel)]="service.formData.cardNumber" required maxlength="16" minlength="16"
+      [class.invalid]="cardNumber.invalid && cardNumber.touched">
   </div>
   <div class="row">
     <div class="form-group col">
       <label>Security Code</label>
       <input class="form-control form-control-lg" placeholder="CVV" name="securityCode" #securityCode="ngModel"
-        [(ngModel)]="service.formData.securityCode">
+        [(ngModel)]="service.formData.securityCode" required required maxlength="3" minlength="3"
+        [class.invalid]="securityCode.invalid && securityCode.touched">
     </div>
 
     <div class="form-group col">
       <label>Valid through</label>
       <input class="form-control form-control-lg" placeholder="MM/YY" name="expirationDate" #expirationDate="ngModel"
-        [(ngModel)]="service.formData.expirationDate">
+        [(ngModel)]="service.formData.expirationDate" required required maxlength="5" minlength="5"
+        [class.invalid]="expirationDate.invalid && expirationDate.touched">
     </div>
   </div>
 
+  <div class="form-group">
+    <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="form.invalid">Submit</button>
+  </div>
 
 </form>
